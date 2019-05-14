@@ -2,12 +2,9 @@ install_git:
   pkg.installed:
     - pkgs:
       - git
+  git.latest:
+    - name: https://github.com/VilleWilkman/scripts.git
+    - target: /scripts
 
-'sudo git clone https://github.com/VilleWilkman/scripts/setuplinux.sh':
-  cmd.run
-
-'sudo chmod +rx setuplinux.sh':
-  cmd.run
-
-'sudo ./setuplinux.sh':
+'cd scripts && sudo chmod +rx setuplinux.sh && ./setuplinux.sh':
   cmd.run
